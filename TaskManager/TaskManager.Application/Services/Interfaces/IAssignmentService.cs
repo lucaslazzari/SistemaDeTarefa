@@ -7,7 +7,7 @@ namespace TaskManager.Application.Services.Interfaces
     public interface IAssignmentService
     {
         Task<int> CreateAsync(CreateAssignmentInputModel inputModel);
-        Task UpdateAsync(UpdateAssignmentInputModel inputModel);
+        Task UpdateAsync(int id, UpdateAssignmentInputModel inputModel);
         Task<List<AssigmentViewModel>> GetAllAsync();
         Task<AssignmentDetailsViewModel> GetByIdAsync(int id);
         Task<List<AssignmentDetailsViewModel>> GetByTitleAsync(string title);

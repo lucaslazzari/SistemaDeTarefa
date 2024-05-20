@@ -113,8 +113,7 @@ namespace TaskManager.API.Controllers
         {
             try
             {
-                inputModel.Id = id;
-                await _assignmentService.UpdateAsync(inputModel);
+                await _assignmentService.UpdateAsync(id, inputModel);
 
                 return Ok();
             }

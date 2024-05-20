@@ -96,11 +96,11 @@ namespace TaskManager.Application.Services.Implementations
             return assignmentDetailsViewModel;
         }
 
-        public async Task UpdateAsync(UpdateAssignmentInputModel inputModel)
+        public async Task UpdateAsync(int id,UpdateAssignmentInputModel inputModel)
         {
-            var assingment = await _assignmentRepository.GetByIdAsync(inputModel.Id);
+            var assingment = await _assignmentRepository.GetByIdAsync(id);
 
-            assingment.Update(inputModel.Title, inputModel.Description, inputModel.date);
+            assingment.Update(inputModel.Title, inputModel.Description, inputModel.Date);
 
             await _assignmentRepository.SaveChangesAsync(assingment);
         }
